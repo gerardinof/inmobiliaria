@@ -1,0 +1,171 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+@font-face {
+    font-family: opensans;
+    src: url("../fuentes/opensans.ttf");
+}
+
+@font-face {
+    font-family: "IconsSocial";
+    src: url("../fuentes/Icons\ Social\ Media\ 7.ttf");
+}
+
+body {
+    font-family: opensans, sans-serif;
+    background: linear-gradient(to bottom, rgb(120, 231, 120), green);
+}
+
+header h1 {
+    font-size: 5em;
+    background-color: aliceblue;
+    text-decoration: underline rgb(2, 247, 2);
+    color: rgb(14, 230, 96);
+
+}
+
+header img {
+    vertical-align: middle;
+    /*Para alinear la imagen verticalmente con el texto */
+
+}
+
+header:hover span:nth-of-type(even) {
+    /*span pares */
+    transform: translateY(20px);
+    /*lo movemos 20px hacia abajo */
+    transition: transform 0.4s;
+    display: inline-block;
+}
+
+header:hover span:nth-of-type(odd) {
+    /*span impares */
+    transform: translateY(-20px);
+    /*lo movemos 20px hacia arriba */
+    transition: transform 0.4s;
+    display: inline-block;
+}
+
+#pisos h2,
+#chalets h2 {
+    font-size: 1.5em;
+    color: darkgreen;
+    border-bottom: 3px solid darkgreen;
+    margin-bottom: 0.7em;
+    margin-top: 0.7em;
+}
+
+.ofertas {
+    display: flex;
+    overflow: scroll;
+    column-gap: 10px;
+    margin-bottom: 30px;
+    
+}
+
+.oferta {
+    position: relative;
+    box-shadow: 2px 2px 4px grey;
+    margin-bottom: 30px; /* Para que no quede pegado barra desplazamiento */
+    background-color: aliceblue;
+    
+}
+.oferta:hover .destacado {
+    transform: rotate( 360deg) scale(1.5);
+    transition: transform 1s;
+}
+#pisos .oferta {
+background-color: rgb(124, 138, 4);
+}
+#pisos .precio {
+    background-color: rgb(116, 114, 21);
+}
+#chalets .oferta{
+    background-color: rgb(8, 211, 35);
+}
+#chalets .precio{
+    background-color: rgb(12, 144, 153);
+}
+
+.oferta img:first-of-type {
+    /* no agranda la estrella */
+    width: 300px;
+
+}
+
+.destacado {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    /* Para que esto funcione, su pader, en este caso
+     .oferta debe tener tener un posicionamiento diferente
+      a static (valor por defecto) .Lo mas es darle
+       a ese padre position: relative */
+}
+.vendido {
+    position: absolute;
+    /*transform: rotate(-45deg);*/
+    top: 50%;
+    left: 50%;
+    /*Al poner el 50% que lo coloque a partir de la mitad , no centrado
+    un truco es luego trasladarlo un 50% hacia atras */
+    transform: translate(-50%, -50%) rotate(-45deg);
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    -webkit-text-stroke: black 2px; /* contorno del texto */
+    text-decoration: line-through;
+    text-decoration-color: red;
+
+}
+.precio {
+    /* Para poner el texto precio a la derecha y el importe a la izquierda */
+    display: flex;
+    justify-content: space-between;
+}
+.precio div:last-of-type{ /*El importe es el ultimo div de precio */
+ font-weight: bold;
+
+}
+.detalles { 
+    display: flex;
+    justify-content: space-between;
+}
+.habitaciones, .baños, .metrosCuadrados {
+    background-repeat: no-repeat;
+    background-size: contain; /* Para que se ajuste a su contenedor */
+    padding-left: 32px;
+}
+.habitaciones {
+    background-image: url("../imagenes/iconos/habitaciones.png");
+}
+
+.baños {
+    background-image: url("../imagenes/iconos/baños.png");
+}
+
+.metrosCuadrados {
+    background-image: url("../imagenes/iconos/metros.png");
+}
+.direccion, .precio, .detalles {
+    padding: 0.2em;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 10px;
+
+}
+footer a{
+    font-family: "IconsSocial";
+    filter:grayscale();
+    padding: 10px;
+
+}
